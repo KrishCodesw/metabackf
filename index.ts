@@ -13,7 +13,12 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 
-app.use(cors());
+app.use(cors({
+  origin: "https://metastash1final.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  credentials: true, // if you're using cookies or sessions
+}));
+
 app.use(express.json());
 
 // Routes
