@@ -19,6 +19,8 @@ app.use(cors({
   credentials: true, // if you're using cookies or sessions
 }));
 
+app.options('*', cors());
+
 app.use(express.json());
 
 // Routes
